@@ -1,0 +1,88 @@
+
+/*
+  ShowItem * parent = NULL;
+  ShowItem * y = root;
+  ShowItem * xr = NULL;
+
+  while (y != NULL) {
+    if (y -> title == title) {
+      if (y == root) 
+        return; // Title is at the top of the tree
+      if ( parent == NULL || parent -> left == y) { 
+        // parent -> y Right
+        // y right -> parent left
+        // Looking at rotating parent's left node
+        if (y -> left == NULL) 
+          return; // No left subnode
+        else {
+          xr = y->left->right; // tmp hold
+          y->left->right = y; // rotate...
+          if (parent == NULL)
+            root = y->left;
+          else if (parent->left == y)
+            parent->left = y->left;
+          else
+            parent->right = y->left;
+          y->left = xr; // update...
+          return;
+        }  
+      } else { // Parent right = y
+        if (y->left == NULL) 
+          return;
+        xr = y->left->right; // tmp hold
+        y->left->right = y; // rotate...
+        if (parent == NULL)
+          root = y->left;
+        else if (parent->left == y)
+          parent->left = y->left;
+        else
+          parent->right = y->left;
+        y->left = xr; // update...
+        return;
+      }
+    } else if (y -> title > title) {
+      parent = y;
+      y = y -> left;
+    } else { // y-> title < title
+      parent = y;
+      y = y->right;
+    }
+
+  }
+
+}
+*/
+
+    /*
+        // Delete the node
+        if (node == root)
+        {
+			// cout << "Removing root node: " << node->title << endl;
+            // If the node is the root, update root pointer
+            root = NULL;
+            // delete node; Delete after handling children
+        }
+        else
+        {
+			cout << "Removing non-root node: " << node->title << endl;       
+          	*pnode = NULL;
+			// delete node;
+        }
+      	reinsertChildren(this, root, node);
+      	node = NULL; // destroyed by reinsertChildren
+      /*
+
+        // Reinsert the children into the tree
+        if (validLeft)
+        {
+           // Need to reinsert entire left subtree
+            cout << "Reinserting left child: " << ogLeft->title << endl;
+            addShowItem(ogLeft->title, ogLeft->year, ogLeft->showRating, ogLeft->userRating); // Reinsert the left child
+        }
+
+        if (validRight)
+        {
+          // Need to reinsert entire right subtree
+            cout << "Reinserting right child: " << ogRight->title << endl;            
+            addShowItem(ogRight->title, ogRight->year, ogRight->showRating, ogRight->userRating); // Reinsert the left child
+        }*/
